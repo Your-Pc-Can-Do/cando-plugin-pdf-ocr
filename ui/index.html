@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-i18n="PDF·이미지 OCR">PDF &amp; image OCR</title><link rel="stylesheet" href="styles.css">
+<script src="../_cando/sdk.js"></script><script src="i18n.js" defer></script><script src="app.js" defer></script></head>
+<body><main>
+<header class="page-header"><h1 id="title" data-i18n="PDF·이미지 OCR">PDF &amp; image OCR</h1></header>
+<section class="input-area" aria-label="Files and action" data-i18n-aria-label="파일과 작업 선택">
+<div class="input-toolbar">
+<div class="action-field"><label for="action" data-i18n="작업">Action</label><select id="action"></select></div>
+<button id="pick" data-i18n="파일 선택">Choose files</button><button id="clear" class="quiet" data-i18n="목록 비우기">Clear list</button><button id="run" class="primary" data-i18n="텍스트 추출">Extract text</button>
+</div>
+<p class="hint" data-i18n="PDF·이미지를 선택하거나 이 화면에 끌어놓으세요.">Choose PDFs or images, or drop them here.</p><ul id="files" class="file-list"></ul>
+</section>
+<section id="page-section" class="page-section" hidden>
+<div class="section-heading"><h2 data-i18n="원본 페이지">Source pages</h2><span class="hint" data-i18n="가로로 스크롤">Scroll horizontally</span></div>
+<div id="pages" class="pages" tabindex="0" aria-label="Source page previews" data-i18n-aria-label="원본 페이지 가로 미리보기"></div>
+<p id="preview-state" class="hint" role="status"></p>
+</section>
+<div class="toolbar"><button id="choose-output">Choose output folder</button><span id="output-location" class="hint"></span></div><p id="error" role="alert" hidden></p>
+<section id="job" class="job-status" aria-live="polite" hidden>
+<div class="status-row"><h2 id="status"></h2><p id="message"></p><div class="toolbar"><button id="cancel" data-i18n="작업 취소">Cancel job</button><button id="folder" data-i18n="결과 폴더">Output folder</button></div></div>
+<progress id="progress" max="1"></progress>
+<details class="saved-files"><summary data-i18n="저장된 파일">Saved files</summary><ul id="results" class="file-list"></ul></details>
+</section>
+<section id="text-result" class="text-result" hidden>
+<div class="section-heading"><h2 data-i18n="추출한 텍스트">Extracted text</h2><div class="toolbar"><button id="copy" data-i18n="텍스트 복사">Copy text</button><button id="save-text" class="primary" data-i18n="편집본 저장">Save edits</button></div></div>
+<label for="text-file" class="visually-hidden" data-i18n="문서">Document</label><select id="text-file"></select>
+<label for="text" class="visually-hidden" data-i18n="추출한 텍스트 편집">Edit extracted text</label><textarea id="text" spellcheck="false" rows="15"></textarea>
+<p id="draft-state" class="hint" role="status"></p>
+</section>
+<footer><details class="disclosure"><summary data-i18n="처리 및 네트워크 안내">Processing and network use</summary><p id="intro"></p><p id="description"></p><p id="storage-note">Originals are preserved. Previews, extracted text and edits are saved in CanDo job output folders.</p><p id="network"></p></details></footer>
+</main></body></html>

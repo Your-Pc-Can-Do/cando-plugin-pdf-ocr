@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 2,
+  "id": "org.your-pc-can-do.pdf-ocr",
+  "name": "PDF·이미지 OCR",
+  "version": "0.3.0",
+  "description": "스캔 문서에서 글자와 QR 내용을 꺼내고 검색 가능한 PDF를 만듭니다.",
+  "author": "marin6670",
+  "ui": {
+    "entry": "ui/index.html"
+  },
+  "networkDisclosure": {
+    "summary": "문서를 로컬에서 처리하며 업로드하지 않습니다. OneOCR 엔진은 설치된 Windows 앱에서 확보합니다. RapidOCR 백업 모델이 없으면 모델 배포 서버에서 다운로드하며, 실행 환경 설치는 PyPI를 사용합니다.",
+    "destinations": [
+      "www.modelscope.cn",
+      "*.modelscope.cn",
+      "pypi.org",
+      "files.pythonhosted.org"
+    ]
+  },
+  "locales": {
+    "en": {
+      "name": "PDF & image OCR",
+      "description": "Extract text and QR content from scans, or create searchable PDFs.",
+      "networkSummary": "Documents are processed locally and are not uploaded. OneOCR is obtained from an installed Windows app. Missing RapidOCR fallback models are downloaded from model distribution servers. Runtime installation uses PyPI."
+    },
+    "ko": {
+      "name": "PDF·이미지 OCR",
+      "description": "스캔 문서에서 글자와 QR 내용을 꺼내고 검색 가능한 PDF를 만듭니다.",
+      "networkSummary": "문서를 로컬에서 처리하며 업로드하지 않습니다. OneOCR 엔진은 설치된 Windows 앱에서 확보합니다. RapidOCR 백업 모델이 없으면 모델 배포 서버에서 다운로드하며, 실행 환경 설치는 PyPI를 사용합니다."
+    }
+  },
+  "cando": ">=0.5.8, <0.7.0",
+  "backend": {
+    "command": "python",
+    "args": [
+      "main.py"
+    ],
+    "protocol": "http-v1"
+  },
+  "python": {
+    "version": ">=3.14,<3.15",
+    "requirements": "requirements.txt"
+  }
+}
